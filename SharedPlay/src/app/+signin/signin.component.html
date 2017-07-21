@@ -1,0 +1,27 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <img src="/assets/images/logo.png" alt="Project image">
+  <md-card fxLayout="column" fxLayoutAlign="none center">
+    <md-card-title>
+      <span fxShow="false" fxShow.gt-xs>
+        You must be signed in to use this app
+      </span>
+      <span fxShow="false" fxShow.xs>
+        You must be signed in
+      </span>
+    </md-card-title>
+    <button md-button id="google-button" (click)="authService.signInWithGoogle()"></button>
+    <button md-button id="facebook-button" (click)="authService.signInWithFacebook()"></button>
+
+  </md-card>
+
+  <ng-template #signedInTemplate>
+    <md-card fxLayout="column" fxLayoutAlign="none center">
+      <md-card-title>
+        <span fxShow="false" fxShow.gt-xs>
+        <!-- Signed in as {{authService.displayNameStream | async}}. -->
+      </span>
+      </md-card-title>
+      <button md-raised-button (click)="authService.signOut()"> Sign Out</button>
+    </md-card>
+  </ng-template>
+</div>

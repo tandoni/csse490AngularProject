@@ -1,0 +1,38 @@
+<md-sidenav-container>
+  <md-sidenav #sidenav>
+    <md-toolbar color="primary">
+      Options
+    </md-toolbar>
+    <md-nav-list>
+      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['joinplaylist']">
+        Join Playlist
+      </a>
+      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['activeplaylist']">
+        Active Playlist
+      </a>
+      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['profile']">
+        Profile
+      </a>
+
+      <hr>
+
+      <a md-list-item (click)="sidenav.toggle()">
+        Sign out
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+
+    <button md-icon-button (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button> Listen to some music!!
+    <!-- <span fxFlex></span> add name of playlist here -->
+  </md-toolbar>
+  <div fxLayoutAlign="center center">
+    <div class="container" class.gt-xs="container-extra-padding" fxFlex fxFlex.md="960px" fxFlex.gt-md="1100px">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</md-sidenav-container>
