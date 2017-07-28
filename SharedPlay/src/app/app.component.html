@@ -16,7 +16,7 @@
 
       <hr>
 
-      <a md-list-item (click)="sidenav.toggle()">
+      <a md-list-item (click)="sidenav.toggle(); authService.signOut();">
         Sign out
       </a>
     </md-nav-list>

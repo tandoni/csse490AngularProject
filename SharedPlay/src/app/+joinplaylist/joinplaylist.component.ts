@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { PlaylistService } from "app/services/playlist.service";
+import { UserService } from "app/services/user.service";
+import * as firebase from 'firebase';
+import { Playlist } from "models/playlist";
+import { AuthService } from "app/services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-joinplaylist',
@@ -7,9 +13,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JoinplaylistComponent implements OnInit {
 
-  constructor() { }
+  playlistName: string;
+  playlist: Playlist;
+  
+  constructor(public userService: UserService, public authService: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
+  }
+
+  joinOrCreate() {
+    this.playlist = new Playlist({ owner: this.authService._currentUsersUid, playlistName: this.playlistName});
+    const activePlaylist = this.userService.joinOrCreate(this.playlist);
+    this.router.navigate(['/activeplaylist', activePlaylist]);
   }
 
 }

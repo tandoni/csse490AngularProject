@@ -1,0 +1,11 @@
+<md-card *ngIf="vid" fxLayout="column">
+  <md-card-header fxLayoutAlign="center none">
+    {{vid[0].link}}
+  </md-card-header>
+  <div fxLayoutAlign="center none">
+    <!-- <img (click)="photoClicked(photoWithAuthor)" routerLinkActive="active" md-card-image [src]="photoWithAuthor.url" alt="Image from firebase"> -->
+  </div>
+  <md-card-actions fxLayoutAlign="end end">
+    <button (click)="delete()" md-icon-button><md-icon>delete</md-icon></button>
+  </md-card-actions>
+</md-card>
