@@ -1,11 +1,34 @@
-<md-card *ngIf="vid" fxLayout="column">
-  <md-card-header fxLayoutAlign="center none">
-    {{vid[0].link}}
-  </md-card-header>
-  <div fxLayoutAlign="center none">
-    <!-- <img (click)="photoClicked(photoWithAuthor)" routerLinkActive="active" md-card-image [src]="photoWithAuthor.url" alt="Image from firebase"> -->
+<md-card fxLayout="column">
+  <div id="stuff" fxLayout="column" fxLayoutAlign="space-around center">
+    <md-card-header>{{playlistName}}</md-card-header>
+    <md-card-content fxLayout="column" id="vids"></md-card-content>
+
   </div>
   <md-card-actions fxLayoutAlign="end end">
-    <button (click)="delete()" md-icon-button><md-icon>delete</md-icon></button>
   </md-card-actions>
 </md-card>
+
+<!-- <div class="container">
+  <section class="panel">
+    <div class="panel-body">
+      <youtube-player [videoId]="id" (ready)="savePlayer($event)" (change)="onStateChange($event)">
+      </youtube-player>
+    </div>
+  </section>
+
+  <div class="col-md-12">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default" (click)="playVideo()">Play</button>
+      <button type="button" class="btn btn-default" (click)="pauseVideo()">Pause</button>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <section class="panel">
+      <div class="panel-title">Player State</div>
+      <div class="panel-body">
+        <pre>{{ ytEvent }}</pre>
+      </div>
+    </section>
+  </div>
+</div>  -->

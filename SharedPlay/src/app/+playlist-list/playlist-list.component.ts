@@ -16,8 +16,9 @@ export class PlaylistListComponent implements OnInit {
   constructor(public playlistService: PlaylistService, private route: ActivatedRoute) {
     this.route.params.subscribe((routeParams: Params) => {
       this.playlistName = routeParams['active'];
+      playlistService.playlistName = this.playlistName;
     });
-   }
+  }
 
   ngOnInit() {
   }
@@ -28,7 +29,7 @@ export class PlaylistListComponent implements OnInit {
     // while (typeof (this.video) === 'undefined') {
     //   console.log(this.video);
     // }
-    
+
     this.songName = '';
   }
 

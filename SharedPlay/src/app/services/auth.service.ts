@@ -47,7 +47,7 @@ export class AuthService {
   signInWithGoogle() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then((result: any) => {
-        this.router.navigate(['/joinplaylist']);
+        this.router.navigate(['/']);
         const user: firebase.User = result.user;
         // this.authorService.updateAuthor(user.uid, user.displayName, user.photoURL);
       });
@@ -56,7 +56,7 @@ export class AuthService {
   signInWithFacebook() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then((result: any) => {
-        this.router.navigate(['/joinplaylist']);
+        this.router.navigate(['/']);
         const user: firebase.User = result.user;
         const token = result.credential.accessToken;
         // this.authorService.updateAuthor(user.uid, user.displayName, user.photoURL);

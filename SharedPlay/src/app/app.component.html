@@ -4,15 +4,16 @@
       Options
     </md-toolbar>
     <md-nav-list>
+      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['profile']">
+        Home
+      </a>
       <a md-list-item (click)="sidenav.toggle()" [routerLink]="['joinplaylist']">
         Join Playlist
       </a>
       <a md-list-item (click)="sidenav.toggle()" [routerLink]="['activeplaylist']">
         Active Playlist
       </a>
-      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['profile']">
-        Profile
-      </a>
+
 
       <hr>
 

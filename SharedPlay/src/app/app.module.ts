@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { YoutubePlayerModule } from 'ng2-youtube-player';
 
 import {
   MdAutocompleteModule,
@@ -46,6 +47,8 @@ import { AuthService } from "app/services/auth.service";
 import { PlaylistService } from "app/services/playlist.service";
 import { UserService } from "app/services/user.service";
 import { PlaylistListComponent } from './+playlist-list/playlist-list.component';
+import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
+// import {YouTubePlayer} from 'youtube-player';
 
 export const MaterialModules = [
   MdAutocompleteModule,
@@ -81,7 +84,8 @@ export const MaterialModules = [
     HomeComponent,
     PlaylistComponent,
     JoinplaylistComponent,
-    PlaylistListComponent
+    PlaylistListComponent,
+    YoutubePlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -93,6 +97,7 @@ export const MaterialModules = [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule,
+    YoutubePlayerModule,
   ],
   providers: [AuthService, PlaylistService, UserService],
   bootstrap: [AppComponent]
