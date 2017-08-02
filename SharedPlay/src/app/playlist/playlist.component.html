@@ -1,34 +1,9 @@
-<md-card fxLayout="column">
+<md-card>
   <div id="stuff" fxLayout="column" fxLayoutAlign="space-around center">
     <md-card-header>{{playlistName}}</md-card-header>
-    <md-card-content fxLayout="column" id="vids"></md-card-content>
+    <md-card-content fxLayoutAlign="center start" fxLayout="column" id="vids">
+
+    </md-card-content>
 
   </div>
-  <md-card-actions fxLayoutAlign="end end">
-  </md-card-actions>
 </md-card>
-
-<!-- <div class="container">
-  <section class="panel">
-    <div class="panel-body">
-      <youtube-player [videoId]="id" (ready)="savePlayer($event)" (change)="onStateChange($event)">
-      </youtube-player>
-    </div>
-  </section>
-
-  <div class="col-md-12">
-    <div class="btn-group" role="group">
-      <button type="button" class="btn btn-default" (click)="playVideo()">Play</button>
-      <button type="button" class="btn btn-default" (click)="pauseVideo()">Pause</button>
-    </div>
-  </div>
-
-  <div class="col-md-12">
-    <section class="panel">
-      <div class="panel-title">Player State</div>
-      <div class="panel-body">
-        <pre>{{ ytEvent }}</pre>
-      </div>
-    </section>
-  </div>
-</div>  -->

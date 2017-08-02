@@ -48,6 +48,7 @@ import { PlaylistService } from "app/services/playlist.service";
 import { UserService } from "app/services/user.service";
 import { PlaylistListComponent } from './+playlist-list/playlist-list.component';
 import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
+import { ReversePipe } from './pipes/reverse.pipe';
 // import {YouTubePlayer} from 'youtube-player';
 
 export const MaterialModules = [
@@ -85,7 +86,8 @@ export const MaterialModules = [
     PlaylistComponent,
     JoinplaylistComponent,
     PlaylistListComponent,
-    YoutubePlayerComponent
+    YoutubePlayerComponent,
+    ReversePipe,
   ],
   imports: [
     BrowserModule,

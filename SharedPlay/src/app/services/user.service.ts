@@ -33,6 +33,7 @@ export class UserService {
   }
 
   createPlaylist(playlist: Playlist) {
+    playlist.playlistName = playlist.playlistName.toLowerCase();
     firebase.database().ref(`${this.playlistsPath}/${playlist.playlistName}`).set(playlist);
 
     // this.db.object(`${this.playlistsPath}/${x.key}`).set(playlist);

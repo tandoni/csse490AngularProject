@@ -1,16 +1,18 @@
 <div fxLayout="column">
   <img src="/assets/images/logo.png" alt="Project image" fxLayoutAlign="space-around start">
-  <md-card fxLayout>
-    <md-input-container fxFlex dividerColor="warn">
-      <input mdInput type="text" placeholder="Join or Create a room" required [(ngModel)]="playlistName" name="playlistName">
-    </md-input-container>
+  <form #vidForm="ngForm" (ngSubmit)="joinOrCreate()">
+    <md-card fxLayout>
+      <md-input-container fxFlex dividerColor="warn">
+        <input mdInput type="text" placeholder="Join or Create a room" required [(ngModel)]="playlistName" name="playlistName">
+      </md-input-container>
 
-    <div fxLayout fxLayoutAlign="end center">
-      <button md-icon-button (click)="joinOrCreate()">
+      <div fxLayout fxLayoutAlign="end center">
+        <button type="submit" md-icon-button [disabled]="!vidForm.form.valid">
       <md-icon>queue_music</md-icon>
     </button>
-    </div>
-  </md-card>
+      </div>
+    </md-card>
+  </form>
 
 
 </div>
