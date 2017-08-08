@@ -3,6 +3,7 @@ import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from 'firebase/app';
 import { Router } from "@angular/router";
 import { Observable } from "rxjs/Observable";
+import { UserService } from "app/services/user.service";
 
 @Injectable()
 export class AuthService {
@@ -84,6 +85,7 @@ export class AuthService {
   }
 
   signOut() {
+    // this.userService.addCurrentPlaylist('');
     this.afAuth.auth.signOut();
     this.router.navigate(['/signin']);
   }

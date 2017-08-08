@@ -25,7 +25,7 @@
     <button *ngIf="authService.isSignedInStream | async" md-icon-button (click)="sidenav.toggle()">
       <md-icon>menu</md-icon>
     </button> Listen to some music!!
-    <span fxFlex></span> {{currentPlaylist}}
+    <!-- <span fxFlex></span> <span *ngIf="(authService.isSignedInStream | async) && currentPlaylist">{{currentPlaylist}}</span> -->
   </md-toolbar>
   <div fxLayoutAlign="center center">
     <div class="container" class.gt-xs="container-extra-padding" fxFlex fxFlex.md="960px" fxFlex.gt-md="1100px">
