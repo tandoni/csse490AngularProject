@@ -23,7 +23,7 @@ export class JoinplaylistComponent implements OnInit {
   }
 
   joinOrCreate() {
-    this.playlist = new Playlist({ owner: this.authService._currentUsersUid, playlistName: this.playlistName});
+    this.playlist = new Playlist({ owner: this.authService._currentUsersUid, playlistName: this.playlistName, timestamp: new Date().toString()});
     this.userService.joinOrCreate(this.playlist);
     this.router.navigate(['/activeplaylist', this.playlist.playlistName]);
   }

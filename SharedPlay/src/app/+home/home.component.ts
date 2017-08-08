@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   clicked(playlistName: string) {
     console.log('blahhhhhh');
-
+    this.userService.addCurrentPlaylist(playlistName);
     this.router.navigate(['activeplaylist', playlistName])
   }
 

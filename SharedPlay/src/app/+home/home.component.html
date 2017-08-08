@@ -1,12 +1,20 @@
-<div fxLayout="column">
+<div fxLayoutAlign="center center" fxLayout="column">
 
-  <img fxLayoutAlign="center stretch" src="/assets/images/logo.png" alt="Project image">
+  <img src="/assets/images/logo.png" alt="Project image">
 
-  <md-list>
+  <md-list *ngIf="(userService.playlistsStream | async);else noPlaylistTemplate">
      <md-list-item *ngFor="let item of userService.playlistsStream | async"> 
-      <md-icon md-list-icon>folder</md-icon>
+      <md-icon md-list-icon>library_music</md-icon>
       <h3 (click)="clicked(item.playlistName)" md-line> {{item.playlistName}} </h3>
 
     </md-list-item>
   </md-list>
+
+  <ng-template #noPlaylistTemplate>
+    <md-card>
+      <md-card-title>
+        Only displaying playlists created in the last 5 hours or no playlists exist yet. Add one! :)
+      </md-card-title>
+    </md-card>
+  </ng-template>
 </div>

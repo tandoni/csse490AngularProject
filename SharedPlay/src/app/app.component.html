@@ -10,7 +10,7 @@
       <a md-list-item (click)="sidenav.toggle()" [routerLink]="['joinplaylist']">
         Join Playlist
       </a>
-      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['activeplaylist']">
+      <a md-list-item (click)="goToActive(); sidenav.toggle()">
         Active Playlist
       </a>
 

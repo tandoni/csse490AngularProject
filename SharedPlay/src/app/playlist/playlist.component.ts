@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit, Renderer, ElementRef, Directive, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, Renderer, ElementRef, Directive, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { Playlist } from "models/playlist";
 import { PlaylistService } from "app/services/playlist.service";
 import { Video } from "models/video";
@@ -10,7 +10,7 @@ import { DomSanitizer } from "@angular/platform-browser";
   styleUrls: ['./playlist.component.scss']
 })
 
-export class PlaylistComponent {
+export class PlaylistComponent implements OnInit, OnDestroy {
   parent: HTMLElement;
   playlistName: string;
 
@@ -37,6 +37,10 @@ export class PlaylistComponent {
   // pauseVideo() {
   //   this.players[0].pauseVideo();
   // }
+
+  ngOnDestroy() {
+    // this.playlistService.videoStream
+  }
 
   ngOnInit() {
     this.parent = document.getElementById('vids');

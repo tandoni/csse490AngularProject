@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaylistService } from "app/services/playlist.service";
 import { ActivatedRoute, Params } from "@angular/router";
+import { AngularFireDatabase } from "angularfire2/database";
 
 @Component({
   selector: 'app-playlist-list',
@@ -13,7 +14,7 @@ export class PlaylistListComponent implements OnInit {
   video: any;
   playlistName: string;
 
-  constructor(public playlistService: PlaylistService, private route: ActivatedRoute) {
+  constructor(private db: AngularFireDatabase, public playlistService: PlaylistService, private route: ActivatedRoute) {
     this.route.params.subscribe((routeParams: Params) => {
       this.playlistName = routeParams['active'];
       playlistService.playlistName = this.playlistName;
