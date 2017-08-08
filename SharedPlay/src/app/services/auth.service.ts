@@ -11,6 +11,7 @@ export class AuthService {
   public displayNameStream: Observable<string>;
   public photoUrlStream: Observable<string>;
   public _currentUsersUid: string;
+  public confirmationResult;
 
   constructor(private afAuth: AngularFireAuth, private router: Router) {
     this.afAuth.authState.subscribe((user: firebase.User) => {
@@ -30,7 +31,7 @@ export class AuthService {
 
     this.displayNameStream = this.afAuth.authState
       .map<firebase.User, string>((user: firebase.User) => {
-        return user ? user.displayName : '';
+        return user ? user.displayName || user.phoneNumber : '';
       });
 
     this.photoUrlStream = this.afAuth.authState
@@ -61,6 +62,25 @@ export class AuthService {
         const token = result.credential.accessToken;
         // this.authorService.updateAuthor(user.uid, user.displayName, user.photoURL);
       });
+  }
+
+  signInWithPhoneNumber(phoneNumber, recaptchaVerifier) {
+    this.afAuth.auth.signInWithPhoneNumber(phoneNumber, recaptchaVerifier)
+      .then((conf) => {
+        this.confirmationResult = conf;
+        console.log(conf);
+      }).catch(function (n) {
+        console.error("SMS not sent!!!")
+      })
+  }
+
+  signInWithCode(code) {
+    this.confirmationResult.confirm(code).then((res) => {
+      const user = res.user;
+      this.router.navigate(['/']);
+    }).catch((err) => {
+      console.log("Failed to sign in...");
+    });
   }
 
   signOut() {

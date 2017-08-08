@@ -18,6 +18,7 @@ export class AppComponent {
   goToActive() {
     this.userService.getCurrentPlaylist().then(res => {
       console.log(res);
+      this.currentPlaylist = res.res;
       this.router.navigate(['activeplaylist', res.res]);
     });;
   }

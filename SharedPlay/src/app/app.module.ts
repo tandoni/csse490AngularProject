@@ -49,6 +49,7 @@ import { UserService } from "app/services/user.service";
 import { PlaylistListComponent } from './+playlist-list/playlist-list.component';
 import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
 import { ReversePipe } from './pipes/reverse.pipe';
+import { AuthGuard } from "./services/auth.guard";
 // import {YouTubePlayer} from 'youtube-player';
 
 export const MaterialModules = [
@@ -101,7 +102,7 @@ export const MaterialModules = [
     AngularFireAuthModule,
     YoutubePlayerModule,
   ],
-  providers: [AuthService, PlaylistService, UserService],
+  providers: [AuthService, PlaylistService, UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

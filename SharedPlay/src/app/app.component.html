@@ -13,10 +13,7 @@
       <a md-list-item (click)="goToActive(); sidenav.toggle()">
         Active Playlist
       </a>
-
-
       <hr>
-
       <a md-list-item (click)="sidenav.toggle(); authService.signOut();">
         Sign out
       </a>
@@ -25,10 +22,10 @@
 
   <md-toolbar color="primary">
 
-    <button md-icon-button (click)="sidenav.toggle()">
+    <button *ngIf="authService.isSignedInStream | async" md-icon-button (click)="sidenav.toggle()">
       <md-icon>menu</md-icon>
     </button> Listen to some music!!
-    <!-- <span fxFlex></span> add name of playlist here -->
+    <span fxFlex></span> {{currentPlaylist}}
   </md-toolbar>
   <div fxLayoutAlign="center center">
     <div class="container" class.gt-xs="container-extra-padding" fxFlex fxFlex.md="960px" fxFlex.gt-md="1100px">
