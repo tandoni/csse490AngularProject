@@ -61,7 +61,6 @@ export class AuthService {
         this.router.navigate(['/']);
         const user: firebase.User = result.user;
         const token = result.credential.accessToken;
-        // this.authorService.updateAuthor(user.uid, user.displayName, user.photoURL);
       });
   }
 

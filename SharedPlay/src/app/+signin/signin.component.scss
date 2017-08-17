@@ -28,12 +28,12 @@ span {
 }
 
 img {
-  // padding-top: 15px;
-  // display: block;
-  // margin: auto;
-  max-width: 100%;
+  display: block;
+  max-height: 500px;
+  width: auto;
+  text-align: center;
   height: auto;
-  width: auto
+  max-width: 100%;
 }
 
 #recaptcha {

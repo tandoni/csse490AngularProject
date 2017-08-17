@@ -1,8 +1,11 @@
 img {
-  padding-top: 15px;
-  margin: auto;
-  width: 25%;
-  float: left;
+  display: block;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+  text-align: center;
+  height: auto;
+  max-width: 100%;
 }
 
 md-card {

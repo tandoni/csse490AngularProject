@@ -76,9 +76,6 @@ export class PlaylistComponent implements OnInit, OnDestroy {
               onError: (e) => {
                 console.log('error', e);
               },
-              // onStateChange: (event) => {
-              //   this.onStateChange(event);
-              // }
             }
           });
           this.players.push(player);
@@ -90,6 +87,9 @@ export class PlaylistComponent implements OnInit, OnDestroy {
           playBtn.className="actions";
           pauseBtn.textContent = "Pause";
           pauseBtn.className = "actions";
+
+          playBtn.style.cssText=" border:none;margin:7px 0 0 20px;padding: 10px 15px;background: #4198f4;color: #FFF;"
+          pauseBtn.style.cssText=" border:none;margin:7px 0 0 20px;padding: 10px 15px;background: #4198f4;color: #FFF;"
           
           playBtn.addEventListener('click', (event) => {
             player.playVideo();
@@ -97,6 +97,7 @@ export class PlaylistComponent implements OnInit, OnDestroy {
           pauseBtn.addEventListener('click', (event) => {
             player.pauseVideo();
           });
+          mainDiv.appendChild(document.createElement('br'));
 
           mainDiv.appendChild(playBtn);
           mainDiv.appendChild(pauseBtn);
